@@ -1,0 +1,8 @@
+// 예시: 저사양 옵션이 켜져 있으면 배경 파티클 생성 안 함
+if (!ClientPrefs.lowQuality) {
+    var glitchParticle:FlxSprite = new FlxSprite(x, y);
+    // ... 파티클 설정 코드 ...
+    add(glitchParticle);
+}
+// 저사양일 때 안티앨리어싱을 꺼서 성능 향상
+antialiasing = ClientPrefs.globalAntialiasing && !ClientPrefs.lowQuality;
